@@ -10,11 +10,11 @@ app.use(express.json());
 const db = mysql.createConnection({
   host: "mysql.railway.internal",
   user: "root",
-  password: "kSUwuBRgUIyFULYpncTQTRvyPFMVwPZX",
+  password: "cCfbigbFTHwJTIWhsLHmVmrvgdNqLaPn",
   database: "railway",
   port: 3306,
   waitForConnections: true,
-  connectionLimit: 100,
+  connectionLimit: 10,
   queueLimit: 0
 });
 
