@@ -11,7 +11,11 @@ const db = mysql.createConnection({
   host: "mysql.railway.internal",
   user: "root",
   password: "kSUwuBRgUIyFULYpncTQTRvyPFMVwPZX",
-  database: "railway" 
+  database: "railway",
+  port: 3306,
+  waitForConnections: true,
+  connectionLimit: 100,
+  queueLimit: 0
 });
 
 db.connect(err => {
