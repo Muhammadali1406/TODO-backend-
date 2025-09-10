@@ -30,10 +30,15 @@ app.get("/todos/:userId", (req, res) => {
   });
 });
 
+app.get("/", (req, res) => {
+  res.send("✅ Todo API ishlayapti!");
+});
+
+
 // 🔹 2) Yangi todo qo‘shish
 app.post("/todos", (req, res) => {
-  const { user_id, title, importance } = req.body;
-  db.query("INSERT INTO todos (user_id, title, importance) VALUES (?, ?)", [user_id, title, importance], (err, result) => {
+  const { user_id, title, importance, date } = req.body;
+  db.query("INSERT INTO todos (user_id, title, importance, date) VALUES (?, ?, ?, ?)", [user_id, title, importance, date], (err, result) => {
     if (err) return res.status(500).json({ error: err.message });
     res.json({ id: result.insertId, user_id, title, importance });
   });
