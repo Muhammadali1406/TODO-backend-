@@ -30,10 +30,13 @@ app.get("/todos/:userId", (req, res) => {
   });
 });
 
-app.get("/", (req, res) => {
-  res.send("✅ Todo API ishlayapti!");
+// 🔹 Barcha todo’larni olish (userId ga qarab emas)
+app.get("/todos", (req, res) => {
+  db.query("SELECT * FROM todos", (err, rows) => {
+    if (err) return res.status(500).json({ error: err.message });
+    res.json(rows);
+  });
 });
-
 
 // 🔹 2) Yangi todo qo‘shish
 app.post("/todos", (req, res) => {
