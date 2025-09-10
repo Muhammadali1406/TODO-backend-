@@ -8,10 +8,10 @@ app.use(express.json());
 
 // 🔹 MySQL’ga ulanish
 const db = mysql.createConnection({
-  host: "localhost",    // Render’ga qo‘ysangiz bu DB host bo‘ladi
-  user: "Ali",         // MySQL user
-  password: "@Ali12341145467", // MySQL parol
-  database: "todo_app2"  // MySQL database nomi
+  host: "mysql.railway.internal",
+  user: "root",
+  password: "kSUwuBRgUIyFULYpncTQTRvyPFMVwPZX",
+  database: "railway" 
 });
 
 db.connect(err => {
